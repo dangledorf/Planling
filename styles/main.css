@@ -1,0 +1,151 @@
+@charset "utf-8";
+/*
+COLOR CODES
+white
+#fbfbfb
+
+dark-blue
+#2d303d
+
+medium-blue
+#4e5881
+#616d9e - hover
+
+purple
+#7d3075 - dark
+#a430b2 - light
+
+green
+#67b230
+
+light-blue
+#32acc6
+
+sky-blue
+#bfdaed
+
+font-gray
+#96989e
+
+font-dark-gray
+#6f6f6f
+
+*/
+/* ============================================================================================================ Main Page Setup */
+body, html { background-color: #e6e6e6; }
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+article { 
+	position: relative;
+	width: 100%;
+	max-width: 1000px;
+
+	margin: 0 auto 0 auto;
+}
+
+/* ============================================================================================================ Common Setup */
+/* full width */
+#latest-shell { width: 100%; }
+
+/* display: inline-block; */
+#header a, #header nav, .inline li 
+{ display: inline-block; zoom: 1; *display: inline; vertical-align: top; }
+
+/* inline lists */
+.inline { margin: 0; padding: 0; list-style-type: none; }
+ul.inline, li.inline { font-size: 0; }
+
+/* transitions */
+.transition,
+#header nav li a
+{
+	transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+}
+
+/* ============================================================================================================ Header Setup */
+#header, #header a { height: 50px; line-height: 50px; }
+#header {
+	background-color: #2d303d;
+	border-bottom: 1px solid #4e5881;
+	box-shadow: 0 1px 0 #2d303d;
+}
+#header nav { float: right; }
+#header nav li { 
+	margin: 0 4px 0 4px; 
+
+	color: #96989e;
+	font-size: 18px;
+}
+#header nav a {
+	padding: 0 8px 0 8px; 
+
+	text-decoration: none;
+	color: inherit;
+}
+#header .logo { margin-top: 7px; }
+#header nav .avatar { margin-right: 0; }
+#header nav .avatar a { padding: 0; }
+#header nav .avatar img { max-height: 100%; }
+#header nav .more { margin: 0 0 0 1px; }
+#header nav .more a { padding: 0 4px 0 4px; }
+
+/* icon hovers */
+#header nav .more a, #header nav .alerts a, #header nav .help a { color: #17181f; }
+#header nav a:hover { color: #f5f5f5; text-shadow: 0 1px #000; }
+#header nav .more a { background-color: #4e5881; }
+#header nav .more a:hover { background-color: #616d9e; }
+
+/* nav icon & tab hovers */
+#header nav .home a:hover, #header nav .create a:hover, #header nav .explore a:hover { height: 58px; border-radius: 0 0 4px 4px; box-shadow: 0 1px #000; }
+#header nav .home a:hover { background-color: #a430b2; }
+#header nav .create a:hover { background-color: #67b230; }
+#header nav .explore a:hover { background-color: #32acc6; }
+
+/* ============================================================================================================ Page Setup */
+
+
+/* ============================================================================================================ Other Setup */
+#latest-shell { 
+	height: 325px;
+	padding: 16px 0 16px 0;
+	background: #7d3075 url("../images/latest_bg.png") 12px 12px/48px 48px; 
+	border-bottom: 2px solid #2d303d;
+}
+#latest { 
+	box-sizing: border-box;
+	height: 100%;
+	padding: 18px 8px 8px 8px;
+	background-color: #f5f5f5; 
+	border-bottom-left-radius: 2px; 
+	border-bottom-right-radius: 2px; 
+	border-bottom: 1px solid #000;
+}
+#latest:before {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 25px;
+	top: -9px;
+	left: 0;
+	content: "";
+	background-image: url("../images/latest_rings.png");
+	background-repeat: repeat-x;
+	background-position: -4px 0;
+	border-bottom: 1px dashed #96989e;
+}
+#latest h1 {
+	margin-bottom: 8px;
+	color: #6f6f6f;
+	font-size: 18px;
+	font-weight: bold;
+}
+#latest table { width: 100%; padding: 0; margin: 0; }
+#latest th { 
+	padding: 2px; 
+	font-size: 10px;
+	font-style: oblique;
+	background-color: #bfdaed;
+}
