@@ -7,3 +7,4 @@ form { display: inline; }
 fieldset { border: 0; display: block; }
 label { cursor: pointer }
 input, select, textarea { outline: 0; }
+table { text-align: left; border-spacing: 0 0; }

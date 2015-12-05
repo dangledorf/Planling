@@ -19,9 +19,9 @@
 				<a class="logo" href=""><img src="images/header_logo.png" alt="Planling"></a>
 				<nav>
 					<ul class="inline">
-						<li class="home"><a href="" class="fa fa-home"></a></li>
-						<li class="create"><a href="" class="fa fa-book">&nbsp;&nbsp;Create</a></li>
-						<li class="explore"><a href="" class="fa fa-star">&nbsp;&nbsp;Explore</a></li>
+						<li class="home"><a href=""><div class="fa fa-home"></div></a></li>
+						<li class="create"><a href=""><div class="fa fa-book"></div>&nbsp;&nbsp;Create</a></li>
+						<li class="explore"><a href=""><div class="fa fa-star"></div>&nbsp;&nbsp;Explore</a></li>
 						<li class="alerts"><a href="" class="fa fa-envelope"></a></li>
 						<li class="help"><a href="" class="fa fa-question"></a></li>
 						<li class="avatar"><a href=""><img src="images/test_avatar.jpg"></a></li>
@@ -36,12 +36,50 @@
 				<h1>Your upcoming lessons</h1>
 				<table>
 					<tr>
-						<th></th>
+						<th class="tab"></th>
 						<th>day</th>
 						<th>time</th>
 						<th>class</th>
 						<th>lesson</th>
 						<th>description</th>
+						<th></th>
+					</tr>
+
+					<tr>
+						<td class="tab col-bg-orange"><div class="fa fa-pencil"></div></td>
+						<td>Monday<div class="date">October 14th, 2015</div></td>
+						<td>1:00pm - 2:00pm</td>
+						<td>Algebra I</td>
+						<td>Learning the basics</td>
+						<td class="description">Much description, wow!</td>
+						<td><a href="" class="btn col-bg-orange">View <div class="fa fa-arrow-circle-right"></div></td></td>
+					</tr>
+					<tr>
+						<td class="tab col-bg-orange"><div class="fa fa-pencil"></div></td>
+						<td>Monday<div class="date">October 14th, 2015</div></td>
+						<td>1:00pm - 2:00pm</td>
+						<td>Algebra I</td>
+						<td>Learning the basics</td>
+						<td class="description">Much description, wow!</td>
+						<td><a href="" class="btn col-bg-orange">View <div class="fa fa-arrow-circle-right"></div></td></td>
+					</tr>
+					<tr>
+						<td class="tab col-bg-orange"><div class="fa fa-pencil"></div></td>
+						<td>Monday<div class="date">October 14th, 2015</div></td>
+						<td>1:00pm - 2:00pm</td>
+						<td>Algebra I</td>
+						<td>Learning the basics</td>
+						<td class="description">Much description, wow!</td>
+						<td><a href="" class="btn col-bg-orange">View <div class="fa fa-arrow-circle-right"></div></td></td>
+					</tr>
+					<tr>
+						<td class="tab col-bg-orange"><div class="fa fa-pencil"></div></td>
+						<td>Monday<div class="date">October 14th, 2015</div></td>
+						<td>1:00pm - 2:00pm</td>
+						<td>Algebra I</td>
+						<td>Learning the basics</td>
+						<td class="description">Much description, wow!</td>
+						<td><a href="" class="btn col-bg-orange">View <div class="fa fa-arrow-circle-right"></div></td></td>
 					</tr>
 				</table>
 			</article>
