@@ -31,19 +31,19 @@
 							</li>
 						</ul>
 						<ul id="main-drop" class="dropdown">
-							<li><a href=""><div class="fa fa-user"></div>Account</a></li>
-							<li><a href=""><div class="fa fa-sign-out"></div>Logout</a></li>
+							<li class="account"><a href=""><div class="fa fa-user"></div>Account</a></li>
+							<li class="logout"><a href=""><div class="fa fa-sign-out"></div>Logout</a></li>
 						</ul>
 						
 						<div id="header-drop" class="fa fa-bars"></div>
 						<ul class="dropdown">
-							<li><a href=""><div class="fa fa-home"></div>Home</a></li>
-							<li><a href=""><div class="fa fa-book"></div>Create</a></li>
-							<li><a href=""><div class="fa fa-star"></div>Explore</a></li>
-							<li><a href=""><div class="fa fa-envelope"></div>Alerts</a></li>
-							<li><a href=""><div class="fa fa-user"></div>Account</a></li>
-							<li><a href=""><div class="fa fa-question"></div>Help</a></li>
-							<li><a href=""><div class="fa fa-sign-out"></div>Logout</a></li>
+							<li class="home"><a href=""><div class="fa fa-home"></div>Home</a></li>
+							<li class="create"><a href=""><div class="fa fa-book"></div>Create</a></li>
+							<li class="explore"><a href=""><div class="fa fa-star"></div>Explore</a></li>
+							<li class="alerts"><a href=""><div class="fa fa-envelope"></div>Alerts</a></li>
+							<li class="account"><a href=""><div class="fa fa-user"></div>Account</a></li>
+							<li class="help"><a href=""><div class="fa fa-question"></div>Help</a></li>
+							<li class="logout"><a href=""><div class="fa fa-sign-out"></div>Logout</a></li>
 						</ul>
 					</nav>
 				</article>
@@ -64,13 +64,13 @@
 						</tr>
 
 						<tr>
-							<td class="tab col-bg-orange"><div class="fa fa-pencil"></div></td>
+							<td class="tab col-bg-orange-red"><div class="fa fa-pencil"></div></td>
 							<td>Monday<div class="date">October 14th, 2015</div><div class="date-small">10-15-2015</div></td>
 							<td>1:00pm - 2:00pm</td>
 							<td>Algebra I</td>
 							<td class="lesson">Learning the basics</td>
 							<td class="description">Much description, wow!</td>
-							<td class="view"><a href="" class="btn col-bg-orange">View <div class="fa fa-arrow-circle-right"></div></td></td>
+							<td class="view"><a href="" class="btn col-bg-orange-red">View <div class="fa fa-arrow-circle-right"></div></td></td>
 						</tr>
 						<tr>
 							<td class="tab col-bg-green"><div class="fa fa-pencil"></div></td>
@@ -91,16 +91,16 @@
 							<td class="view"><a href="" class="btn col-bg-blue">View <div class="fa fa-arrow-circle-right"></div></td></td>
 						</tr>
 						<tr>
-							<td class="tab col-bg-yellow"><div class="fa fa-pencil"></div></td>
+							<td class="tab col-bg-orange"><div class="fa fa-pencil"></div></td>
 							<td>Monday<div class="date">October 14th, 2015</div><div class="date-small">10-15-2015</div></td>
 							<td>1:00pm - 2:00pm</td>
 							<td>Algebra I</td>
 							<td class="lesson">Learning the basics</td>
 							<td class="description">Much description, wow!</td>
-							<td class="view"><a href="" class="btn col-bg-yellow">View <div class="fa fa-arrow-circle-right"></div></td></td>
+							<td class="view"><a href="" class="btn col-bg-orange">View <div class="fa fa-arrow-circle-right"></div></td></td>
 						</tr>
 					</table>
-					<a href="" class="btn btn-simple col-bg-skyblue view-all full">View All</a>
+					<a href="" class="btn btn-simple col-bg-sky-blue view-all full">View All</a>
 				</article>
 			</div>
 			<div id="footer-push"></div>
