@@ -1,0 +1,11 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#set logout url
+RewriteRule ^logout$ /scripts/logout.php
+
+#remove file name extensions
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

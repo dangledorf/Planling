@@ -37,4 +37,6 @@
 @media only screen and (max-width: 350px){
 	/* latest section */
 	#latest .lesson { display: none; }
+	/* flex tables */
+	/*.flex_table label .mini-tag { display: none; }*/
 }
