@@ -170,7 +170,7 @@ function is_logged_in() { //checks if a users data is set and logged in
 }
 function do_login($username, $password) { //logs a user in
 	//get variables
-	$user = sql_filter( $username );
+	$user = strtolower(sql_filter( $username ));
 	$password = sql_filter( $password );
 	//check if email or username login
 	$tstring = " email='$user' ";
@@ -245,7 +245,57 @@ function create_tag_mini($color, $text) { //draws a mini-tag
 	return '<div class="mini-tag '.$color.'">'.$text.'</div>';
 }
 function create_tag_required() { //draws a required mini-tag
-	return create_tag_mini('col-bg-red', 'required');
+	return create_tag_mini('col-bg-red', 'Required');
+}
+
+////////////////////////////
+///////EMAIL FUNCTIONS//////	
+////////////////////////////
+function email_init() { //inits the email system
+	require_once(ROOT_PATH.'/scripts/other/mailer/mail_config.php');
+	return $mail; //return created mail object
+}
+function email_send($format, $subject, $to = array(), $data = array()) { //sends an email
+	/*
+	$format: register, account, etc. This is combined to make a file name. ie. register.html
+	$to: array of who you are sending this to - array('email' => 'first last name')
+	$data: array of data to replace - array('{{%REPLACE_ME%}}' => 'Replacing with this')
+	*/
+	$mail = email_init(); //init email
+	//format variables
+	if(empty($format)) return false; //no email format specified
+	if(!isset($subject)) $subject = 'Hello from Planling!';
+	if(empty($to)) return false; //no to set
+	//load html email base
+	$tbase = file_get_contents(ROOT_PATH.'/includes/emails/base.html');
+	//load html email content base
+	$tcontent = file_get_contents(ROOT_PATH.'/includes/emails/'.$format.'.html');
+	//swap keywords in content file
+	foreach($data as $x => $y){
+		$tcontent = str_replace($x, $y, $tcontent);
+	}
+	//swap keywords in base file
+	$body = $tbase;
+	$body = str_replace('{{%CONTENT%}}', $tcontent, $body);
+	//send email
+	$mail->Subject = $subject;
+	$mail->Body = $body; 
+	$mail->WordWrap = 50;
+	$mail->MsgHTML($body);
+	$mail->IsHTML(true);
+	//send to each address
+	foreach($to as $e => $n) {
+		//add address
+		$mail->AddAddress($e, $n);
+		//send mail
+		if(!$mail->Send()){
+			//fail
+		}else{
+			//success
+		}
+		//clear addresses
+		$mail->ClearAddresses();
+	}
 }
 
 ?>

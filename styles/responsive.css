@@ -3,6 +3,9 @@
 }
 
 @media only screen and (max-width: 800px){
+	/* universal */
+	.rsp-hide-big { display: none; }
+	.rsp-fshrink-big { font-size: 10px; }
 	/* latest section */
 	#latest .description { display: none; }
 	#latest .view .fa:before { content: ""; }
@@ -12,6 +15,9 @@
 }
 
 @media only screen and (max-width: 700px){
+	/* universal */
+	.rsp-hide-normal { display: none; }
+	.rsp-fshrink-normal { font-size: 10px; }
 	/* header */
 	#header nav .dropdown li { font-size: 16px; }
 	/* latest section */
@@ -21,6 +27,9 @@
 }
 
 @media only screen and (max-width: 569px){
+	/* universal */
+	.rsp-hide-medium { display: none; }
+	.rsp-fshrink-medium { font-size: 10px; }
 	/* header */
 	#header nav .inline { display: none; }
 	#header-drop { display: block; }
@@ -32,11 +41,28 @@
 	#latest .view .fa:before { content: "\f002"; font-size: 10px; }
 	#latest .date { display: none; }
 	#latest .date-small { display: block; }
+	/* table styling */
+	table.fancy, table.fancy thead, table.fancy tbody, table.fancy th, table.fancy tr, table.fancy td { display: block; }
+	table.fancy thead tr { position: absolute; top: -9999px; left: -9999px; }
+	table.fancy tr { border: 1px solid #000; }
+	table.fancy td {
+		position: relative;
+		padding-left: 50%;
+		border: none;
+		border-bottom: 1px solid #000;
+	}
+	table.fancy td:before {
+		position: absolute;
+		top: 6px; left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+		content: attr(data-label);
+	}
 }
 
 @media only screen and (max-width: 350px){
-	/* latest section */
-	#latest .lesson { display: none; }
-	/* flex tables */
-	/*.flex_table label .mini-tag { display: none; }*/
+	/* universal */
+	.rsp-hide-small { display: none; }
+	.rsp-fshrink-small { font-size: 10px; }
 }

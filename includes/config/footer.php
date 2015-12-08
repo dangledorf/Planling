@@ -44,7 +44,7 @@
 
 	//flex table controls
 	//label hover control
-	$('.flex_table label').on('mouseover', function(){
+	$('label').on('mouseover', function(){
 		var tid = $(this).prop('for');
 		$('#'+tid).addClass('hover');
 		$(this).addClass('hover');
@@ -54,7 +54,7 @@
 		$(this).removeClass('hover');
 	});
 	//input hover control
-	$('.flex_table input').on('mouseover', function(){
+	$('input').on('mouseover', function(){
 		var tid = $(this).prop('id');
 		$('label[for="'+tid+'"]').addClass('hover');
 		$(this).addClass('hover');
@@ -63,6 +63,9 @@
 		$('label[for="'+tid+'"]').removeClass('hover');
 		$(this).removeClass('hover');
 	});
+
+	//add required styles
+	$('input[required]').after('<div class="required fa fa-asterisk"></div>');
 
 	//notices controls
 	$('.notice').click(function(){ //user clicked notice

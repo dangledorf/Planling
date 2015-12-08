@@ -1,8 +1,8 @@
 <?php
 //creates a user account
 //get variables
-$email1 = set_post('email1', '');
-$email2 = set_post('email2', '');
+$email1 = strtolower(set_post('email1', ''));
+$email2 = strtolower(set_post('email2', ''));
 $password1 = set_post('password1', '');
 $password2 = set_post('password2', '');
 
@@ -50,6 +50,14 @@ $confirm = confirm_token_create( $email1 );
 
 //add to database
 sql_query(" INSERT INTO `users` (hash_token, email, password, confirm) VALUES('$hash_token', '$email1', '$password', '$confirm') ");
+
+//send email
+email_send( 
+	'register', 
+	'Welcome to Planling!', 
+	array($email1 => $email1), 
+	array('{{%LINK%}}' => 'http://planling.com/verify?e='.$email1.'&t='.$confirm) 
+	);
 
 //log the user in
 if(do_login($email1, $password1) == true) $main_data = set_main_data(); //login success - create main_data

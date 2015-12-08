@@ -16,7 +16,7 @@ if(is_logged_in()){
 					<th>day</th>
 					<th>time</th>
 					<th>class</th>
-					<th class="lesson">lesson</th>
+					<th class="rsp-hide-small">lesson</th>
 					<th class="description">description</th>
 					<th class="view"></th>
 				</tr>
@@ -26,7 +26,7 @@ if(is_logged_in()){
 					<td>Monday<div class="date">October 14th, 2015</div><div class="date-small">10-15-2015</div></td>
 					<td>1:00pm - 2:00pm</td>
 					<td>Algebra I</td>
-					<td class="lesson">Learning the basics</td>
+					<td class="rsp-hide-small">Learning the basics</td>
 					<td class="description">Much description, wow!</td>
 					<td class="view"><a href="" class="btn col-bg-orange-red">View <div class="fa fa-arrow-circle-right"></div></td></td>
 				</tr>
@@ -35,7 +35,7 @@ if(is_logged_in()){
 					<td>Monday<div class="date">October 14th, 2015</div><div class="date-small">10-15-2015</div></td>
 					<td>1:00pm - 2:00pm</td>
 					<td>Algebra I</td>
-					<td class="lesson">Learning the basics</td>
+					<td class="rsp-hide-small">Learning the basics</td>
 					<td class="description">Much description, wow!</td>
 					<td class="view"><a href="" class="btn col-bg-green">View <div class="fa fa-arrow-circle-right"></div></td></td>
 				</tr>
@@ -44,7 +44,7 @@ if(is_logged_in()){
 					<td>Monday<div class="date">October 14th, 2015</div><div class="date-small">10-15-2015</div></td>
 					<td>1:00pm - 2:00pm</td>
 					<td>Algebra I</td>
-					<td class="lesson">Learning the basics</td>
+					<td class="rsp-hide-small">Learning the basics</td>
 					<td class="description">Much description, wow!</td>
 					<td class="view"><a href="" class="btn col-bg-blue">View <div class="fa fa-arrow-circle-right"></div></td></td>
 				</tr>
@@ -53,7 +53,7 @@ if(is_logged_in()){
 					<td>Monday<div class="date">October 14th, 2015</div><div class="date-small">10-15-2015</div></td>
 					<td>1:00pm - 2:00pm</td>
 					<td>Algebra I</td>
-					<td class="lesson">Learning the basics</td>
+					<td class="rsp-hide-small">Learning the basics</td>
 					<td class="description">Much description, wow!</td>
 					<td class="view"><a href="" class="btn col-bg-orange">View <div class="fa fa-arrow-circle-right"></div></td></td>
 				</tr>
@@ -63,30 +63,36 @@ if(is_logged_in()){
 	</div>';
 }else{
 	echo '
-	<article>
+	<div id="latest-shell">
+		<article>
 		<form action="" method="post">
-			<div class="flex_table">
-				<div class="flex_tr">
-					<div class="flex_td flex_small">
+			<table class="center" style="background-color: #e6e6e6; border-radius: 6px; padding: 12px">
+				<tr>
+					<td>
 						<label for="_user">Login:</label>
-					</div>
-					<div class="flex_td">
+					</td>
+					<td>
 						<input type="text" name="user" id="_user" value="'.set_post('user','').'" autocomplete="on" maxlength="255" placeholder="email or username" required>
-					</div>
-				</div>
-				<div class="flex_tr">
-					<div class="flex_td flex_small">
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<label for="_password">Password:</label>
-					</div>
-					<div class="flex_td">
+					</td>
+					<td>
 						<input type="password" name="password" id="_password" autocomplete="on" minlength="'.REQ_PASSWORD_LENGTH.'" maxlength="255" required>
-					</div>
-				</div>
-				<div class="flex_tr">
-					<input type="submit" class="col-bg-blue" value="Login">
-				</div>
-			</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" class="full col-bg-blue" value="Login">
+						<br>
+						Don\'t have an account? <a href="register">Register free here <div class="fa fa-arrow-circle-right"></div></a>
+					</td>
+				</tr>
+			</table>
 		</form>
-	</article>';	
+	</article>
+	</div>';	
 }
 ?>

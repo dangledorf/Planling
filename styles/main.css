@@ -50,6 +50,9 @@ article {
 /* full width */
 .full, #latest-shell { width: 100%; }
 
+/* center */
+.center { margin-left: auto; margin-right: auto;}
+
 /* display: inline-block; */
 #header a, #header nav, .inline li , .btn, #header nav .more img, #header-drop img, .mini-tag
 { display: inline-block; zoom: 1; *display: inline; vertical-align: top; }
@@ -59,16 +62,16 @@ article {
 ul.inline, li.inline { font-size: 0; }
 
 /* text shadows */
-#header nav li a:hover, .tab, .btn, .mini-tag, input[type="submit"], input[type="button"]  
+#header nav li a:hover, .tab, .btn, .mini-tag, input[type="submit"], input[type="button"] 
 { text-shadow: 0 1px #000; }
 
 /* box shadows */
-.btn, #header nav .dropdown, .mini-tag, input[type="submit"], input[type="button"], .notice 
+.btn, #header nav .dropdown, .mini-tag, input[type="submit"], input[type="button"], .notice
 { box-shadow: 0 1px #000; }
 
 /* transitions */
 .transition,
-#header nav li a, #header nav .more, .btn:before, #header-drop, #header nav li:after, .flex_table label, .flex_table input, .flex_table label:before, .notice .fa
+#header nav li a, #header nav .more, .btn:before, #header-drop, #header nav li:after, label, input, label:before, .notice .fa
 {
 	transition-duration: 0.2s;
 	-moz-transition-duration: 0.2s;
@@ -92,9 +95,9 @@ input[type="text"], input[type="email"], input[type="password"] {
 	border-radius: 4px; 
 	box-shadow: 0 1px #000;
 }
-input[type="text"]:focus, .flex_table input[type="text"].hover,
-input[type="email"]:focus, .flex_table input[type="email"].hover,
-input[type="password"]:focus, .flex_table input[type="password"].hover
+input[type="text"]:focus, input[type="text"].hover,
+input[type="email"]:focus, input[type="email"].hover,
+input[type="password"]:focus, input[type="password"].hover
 { background-color: #FDFFDB; border: 1px solid rgba(0, 0, 0, 0.3); }
 
 /* ============================================================================================================ Header Setup */
@@ -196,37 +199,17 @@ footer { background-color: #2d303d; color: #e6e6e6; }
 footer article { padding: 8px; }
 
 /* ============================================================================================================ Custom Table Setup */
-.flex_table, .flex_tr, .flex_td { position: relative; display:flex; }
-.flex_table, .flex_tr { width: 100%; }
-.flex_table { 
-	flex-flow: column nowrap;
-	justify-content: space-between;
-}
-.flex_tr { 
-	flex-flow: row nowrap;
-	padding: 4px 0 4px 0;
-}
-.flex_td { 
-	flex-flow: row wrap;
-	flex-grow: 1;
-	flex-basis: 0;
-	padding: 0 4px 0 4px;
-}
-.flex_small { flex-basis: 15%; flex-grow: inherit;}
+/* standard table setup */
+table { position: relative; width: auto; margin: 8px 0 8px 0; }
+td, th { position: relative; padding: 6px; text-align: left; }
 
-.flex_table label { width: 100%; z-index: 0; padding: 0 0 0 8px; line-height: 30px; }
-.flex_table label:before { 
-	position: absolute;
-	z-index: -1;
-	width: 4px;
-	height: 100%;
-	top: 0; left: 0;
-	content: "";
-	background-color: #C9DBEF; 
-	border-radius: 0 4px 4px 0;
-	border-left: 2px solid rgba(0, 0, 0, 0.1);
+/* fancy tables */
+table.fancy th { 
+	font-size: 10px;
+	font-style: oblique;
+	background-color: #bfdaed;
 }
-.flex_table label.hover:before { width: 100%; }
+table.fancy tr:nth-child(odd) { background-color: #fbfbfb; }
 
 /* ============================================================================================================ Other Setup */
 /* latest styling */
@@ -297,8 +280,11 @@ footer article { padding: 8px; }
 	margin: auto;
 	color: #fbfbfb;
 }
+.required {
 
-/* ============================================================================================================ Button Setup */
+}
+
+/* ============================================================================================================ Input Setup */
 .btn, input[type="submit"], input[type="button"] {
 	position: relative;
 	/* height: 32px; */
@@ -333,6 +319,21 @@ footer article { padding: 8px; }
 }
 input[type="submit"].hover, input[type="button"].hover { opacity: 0.75; }
 
+/* label hovering */
+label { position: relative; display: block; width: 100%; z-index: 0; padding: 0 8px 0 8px; line-height: 30px; }
+label:before { 
+	position: absolute;
+	z-index: -1;
+	width: 4px;
+	height: 100%;
+	top: 0; left: 0;
+	content: "";
+	background-color: #C9DBEF; 
+	border-radius: 0 4px 4px 0;
+	border-left: 2px solid rgba(0, 0, 0, 0.1);
+}
+label.hover:before { width: 100%; }
+
 /* ============================================================================================================ Other Setup */
 .mini-tag {
 	position: absolute;
@@ -344,6 +345,13 @@ input[type="submit"].hover, input[type="button"].hover { opacity: 0.75; }
 	color: #fbfbfb;
 	border-radius: 2px;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.required {
+	vertical-align: top;
+	padding: 2px;
+	margin: 2px 0 0 -16px;
+	color: #808080;
+	text-align: center;
 }
 /* notices */
 .notice {
