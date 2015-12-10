@@ -1,8 +1,9 @@
 <?php
 //main configuration file
 //constants & system variables
-	//base file location
+	//locations
 	define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT']); //absolute file location
+	define('MAIN_URL', 'localhost'); //site url
 	//page type system
 	$GLOBALS['PAGE_TYPE'] = 0; //current page type defined - changes what happens on script end etc
 	define('PAGE_TYPE_CONTENT', 0); //main content pages
@@ -118,7 +119,7 @@ function notices_get($type = NULL) { //returns notices
 	$_SESSION['notices'] = array();
 	unset($_SESSION['notices']);
 	//combine and return notices
-	return '<article>'.implode('<br>', $tarray).'</article>';
+	return '<article>'.implode('', $tarray).'</article>';
 }
 //end script functions
 function script_end() { //this script is ran at the end of every page.

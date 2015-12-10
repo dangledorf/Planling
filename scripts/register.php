@@ -56,7 +56,7 @@ email_send(
 	'register', 
 	'Welcome to Planling!', 
 	array($email1 => $email1), 
-	array('{{%LINK%}}' => 'http://planling.com/verify?e='.$email1.'&t='.$confirm) 
+	array('{{%LINK%}}' => 'http://'.MAIN_URL.'/verify?e='.$email1.'&t='.$confirm) 
 	);
 
 //log the user in

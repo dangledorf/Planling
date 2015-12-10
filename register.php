@@ -3,7 +3,7 @@ require('includes/config/config.php');
 page_type_set(PAGE_TYPE_CONTENT);
 
 //scripts
-require('scripts/register/register.php');
+require('scripts/register.php');
 if(is_logged_in()) do_redirect();
 
 echo '

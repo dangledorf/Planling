@@ -5,256 +5,239 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Planling</title>
 <style>
-/* -------------------------------------
-    GLOBAL
-------------------------------------- */
-* {
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 100%;
-  line-height: 1.6em;
-  margin: 0;
-  padding: 0;
-}
+  table {
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    margin: 0; padding: 0;
+    border-spacing: 0;
+  }
+  img { max-width: 600px; width: 100%; }
+  body {
+    height: 100%;
+    width: 100% !important;
+    margin: 0; padding: 0;
+    background-color: #2d303d;
+  }
 
-img {
-  max-width: 600px;
-  width: 100%;
-}
+  td { color: #232323; }
+  .logo { text-align: center; }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  height: 100%;
-  -webkit-text-size-adjust: none;
-  width: 100% !important;
-  background-color: #2d303d;
-}
+  .btn-primary {
+    margin: 10px 0 14px 0;
+    width: auto !important;
+  }
+  .btn-primary td {
+    font-size: 14px; 
+    text-align: center;
+    vertical-align: baseline; 
+    text-shadow: 0 1px #000;
+    box-shadow: 0 2px 0 #000;
+    background-color: #348eda; 
+    border-radius: 8px;
+    border: 1px solid #2E5C84;
+    border-bottom: 2px solid #95CAF7;
+  }
+  .btn-primary td a {
+    background-color: #348eda;
+    border: solid 1px #348eda;
+    border-radius: 25px;
+    border-width: 6px 30px;
+    display: inline-block;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 20px;
+    text-decoration: none;
+  }
+  .last { margin-bottom: 0; }
+  .first { margin-top: 0; }
+  .padding { padding: 10px 0; }
 
+  table.body-wrap {
+      width: 100%;
+      padding: 20px;
+      background: #7d3075 url("http://jasongordy.com/planling/images/latest_bg.png") 12px 12px/48px 48px; 
+  }
 
-/* -------------------------------------
-    ELEMENTS
-------------------------------------- */
-a {
-  color: #348eda;
-}
+  table.footer-wrap {
+    clear: both !important;
+    width: 100%; 
+    color: #e6e6e6;
+    font-size: 12px;
+    background-color: #2d303d;
+  }
+  table.footer-wrap a { color: #999999; }
 
-.logo { text-align: center; }
-.logo img { width: 100%; }
+  br { line-height: 20px; }
+  hr { border: 0; border-bottom: 1px solid #97AAAF; }
+  h1 {
+    line-height: 20px;
+    margin: 0; padding: 0;
+    font-size: 20px;
+    color: #111111;
+    font-weight: 200;
+    border-bottom: 2px solid #D61919;
 
-.btn-primary {
-  Margin-bottom: 10px;
-  width: auto !important;
-}
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  p, ul, ol {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    line-height: 20px;
+  }
+  ul li, ol li {
+    margin-left: 5px;
+    list-style-position: inside;
+  }
+  .signature { color: #777777; }
 
-.btn-primary td {
-  background-color: #348eda; 
-  border-radius: 8px;
-  border: 1px solid #2E5C84;
-  border-bottom: 2px solid #95CAF7;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-size: 14px; 
-  text-align: center;
-  vertical-align: top; 
-  text-shadow: 0 1px #000;
-  box-shadow: 0 2px 0 #000;
-}
-
-.btn-primary td a {
-  background-color: #348eda;
-  border: solid 1px #348eda;
-  border-radius: 25px;
-  border-width: 10px 20px;
-  display: inline-block;
-  color: #ffffff;
-  cursor: pointer;
-  font-weight: bold;
-  line-height: 2;
-  text-decoration: none;
-}
-
-.last {
-  margin-bottom: 0;
-}
-
-.first {
-  margin-top: 0;
-}
-
-.padding {
-  padding: 10px 0;
-}
-
-
-/* -------------------------------------
-    BODY
-------------------------------------- */
-table.body-wrap {
+  .container {
+    clear: both !important;
+    display: block !important;
+    margin: 0 auto !important;
+    max-width: 750px !important;
+  }
+  .content-shell, .logo, .content {
     width: 100%;
-    padding: 20px;
-    background: #7d3075 url("http://jasongordy.com/planling/images/latest_bg.png") 12px 12px/48px 48px; 
-}
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 8px 0 8px 0;
+  }
+  .content-shell table { width: 100%; }
+  .main-content { 
+    padding: 20px 12px 12px 10px;
+    background-color: #e6e6e6;
+    background-image: url("http://jasongordy.com/planling/images/paper_lines_20px.gif");
+    background-repeat: repeat;
+    border-radius: 0 8px 8px 0;
+    vertical-align: baseline;
+    line-height: 20px;
+  }
+  .content td { color: #797979; }
 
-table.body-wrap .container {
-  border: 1px solid #f0f0f0;
-  border-bottom: 2px solid #000;
-  border-radius: 4px;
-}
+  .rings {
+    width: 24px;
+    padding: 0;
+    background-image: url("http://jasongordy.com/planling/images/email_rings_left.png");
+    background-repeat: repeat-y;
+    background-position: 0 5px;
+  }
 
+  .tabs-shell {
+    width: 25px;
+    vertical-align: top;
+  }
+  .spacer { height: 16px; }
+  .tab {
+    height: 64px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 8px 8px 0;
+  }
+  .col-bg-green { 
+    background-color: #28bf48 !important; 
+    border-bottom: 2px solid #4FF171;
+    border-left: 3px solid #2FA948;
+    border-right: 1px solid #204227;
+    border-top: 1px solid #204227;
+  }
+  .col-bg-blue { 
+    background-color: #4A8CD0 !important;
+    border-bottom: 2px solid #82BEFD;
+    border-left: 3px solid #3F6892;
+    border-right: 1px solid #21456B;
+    border-top: 1px solid #21456B; 
+  }
+  .col-bg-orange { 
+    background-color: #E2B100 !important; 
+    border-bottom: 2px solid #FFEBA3;
+    border-left: 3px solid #E28800;
+    border-right: 1px solid #983100;
+    border-top: 1px solid #983100;
+  }
 
-/* -------------------------------------
-    FOOTER
-------------------------------------- */
-table.footer-wrap {
-  clear: both !important;
-  width: 100%; 
-  background-color: #2d303d;
-}
-
-.footer-wrap .container p {
-  color: #e6e6e6;
-  font-size: 12px;
-  
-}
-
-table.footer-wrap a {
-  color: #999999;
-}
-
-
-/* -------------------------------------
-    TYPOGRAPHY
-------------------------------------- */
-h1, 
-h2, 
-h3 {
-  color: #111111;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 200;
-  line-height: 1.2em;
-  margin: 40px 0 10px;
-}
-
-h1 {
-  font-size: 36px;
-}
-h2 {
-  font-size: 28px;
-}
-h3 {
-  font-size: 22px;
-}
-
-p, 
-ul, 
-ol {
-  font-size: 14px;
-  font-weight: normal;
-  margin-bottom: 10px;
-}
-
-ul li, 
-ol li {
-  margin-left: 5px;
-  list-style-position: inside;
-}
-
-.signature { color: #777777; }
-
-/* ---------------------------------------------------
-    RESPONSIVENESS
------------------------------------------------------- */
-
-/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
-.container {
-  clear: both !important;
-  display: block !important;
-  Margin: 0 auto !important;
-  max-width: 600px !important;
-}
-
-/* Set the padding on the td rather than the div for Outlook compatibility */
-.body-wrap .container {
-  padding: 20px;
-}
-
-/* This should also be a block element, so that it will fill 100% of the .container */
-.content {
-  display: block;
-  margin: 0 auto;
-  max-width: 600px;
-}
-
-/* Let's make sure tables in the content area are 100% wide */
-.content table {
-  width: 100%;
+@media only screen and (max-width: 569px){
+  .body-wrap { padding: 0 !important; }
+  .tabs-shell { width: 16px; border-radius: 0 4px 4px 0; }
 }
 
 </style>
 </head>
 
-<body bgcolor="#f6f6f6">
+<body bgcolor="#f6f6f6" style="height: 100%;margin: 0;padding: 0;background-color: #2d303d;width: 100% !important;">
 
 <!-- body -->
-<table class="body-wrap" bgcolor="#f6f6f6">
+<table class="body-wrap" bgcolor="#f6f6f6" style="font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin: 0;padding: 20px;border-spacing: 0;width: 100%;background: #7d3075 url(http://jasongordy.com/planling/images/latest_bg.png) 12px 12px/48px 48px;">
     <tr>
-        <td></td>
-        <td class="logo"><img src="http://jasongordy.com/planling/images/logo_white_large.png"></td>
-        <td></td>
+        <td style="color: #232323;"></td>
+        <td class="logo" style="color: #232323;text-align: center;width: 100%;max-width: 750px;margin: 0 auto;padding: 8px 0 8px 0;"><img src="http://jasongordy.com/planling/images/logo_white_large.png" style="max-width: 600px;width: 100%;"></td>
+        <td style="color: #232323;"></td>
     </tr>
     <tr>
-        <td></td>
-        <td class="container" bgcolor="#e6e6e6">
-
+        <td style="color: #232323;"></td>
+        <td class="container" style="color: #232323;clear: both !important;display: block !important;margin: 0 auto !important;max-width: 750px !important;">
           <!-- content -->
-          <div class="content">
-          <table>
+          <table class="content-shell" style="font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin: 0 auto;padding: 8px 0 8px 0;border-spacing: 0;width: 100%;max-width: 750px;">
             <tr>
-              <td>
-                
+              <td class="rings" style="color: #232323;width: 24px;padding: 0;background-image: url(http://jasongordy.com/planling/images/email_rings_left.png);background-repeat: repeat-y;background-position: 0 5px;"></td>
+              <td class="main-content" style="color: #232323;padding: 20px 12px 12px 10px;background-color: #e6e6e6;background-image: url(http://jasongordy.com/planling/images/paper_lines_20px.gif);background-repeat: repeat;border-radius: 0 8px 8px 0;vertical-align: baseline;line-height: 20px;">
                 <!-- email text here -->
                 {{%CONTENT%}}
                 <!-- /email text here -->
 
                 <!-- signature -->
-                <p>
-                    See you soon!
-                    <br>
-                    <span class="signature"><em>Wordsworth</em>, Planling.com</span>
-                </p>
+                <br style="line-height: 20px;">
+                <br style="line-height: 20px;">
+                See you soon!
+                <br style="line-height: 20px;">
+                <span class="signature" style="color: #777777;"><em>Wordsworth</em>, Planling.com</span>
                 <!-- /signature -->
 
               </td>
+              <td class="tabs-shell" style="color: #232323;width: 25px;vertical-align: top;">
+                <table style="font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin: 0;padding: 0;border-spacing: 0;width: 100%;">
+                  <tr class="spacer" style="height: 16px;"><td style="color: #232323;"></td></tr>
+                  <tr class="tab-row">
+                    <td class="tab col-bg-green" style="color: #232323;height: 64px;width: 100%;background-color: #28bf48 !important;border-radius: 0 8px 8px 0;border-bottom: 2px solid #4FF171;border-left: 3px solid #2FA948;border-right: 1px solid #204227;border-top: 1px solid #204227;"></td>
+                  </tr>
+                  <tr class="tab-row">
+                    <td class="tab col-bg-blue" style="color: #232323;height: 64px;width: 100%;background-color: #4A8CD0 !important;border-radius: 0 8px 8px 0;border-bottom: 2px solid #82BEFD;border-left: 3px solid #3F6892;border-right: 1px solid #21456B;border-top: 1px solid #21456B;"></td>
+                  </tr>
+                  <tr class="tab-row">
+                    <td class="tab col-bg-orange" style="color: #232323;height: 64px;width: 100%;background-color: #E2B100 !important;border-radius: 0 8px 8px 0;border-bottom: 2px solid #FFEBA3;border-left: 3px solid #E28800;border-right: 1px solid #983100;border-top: 1px solid #983100;"></td>
+                  </tr>
+                  <tr class="spacer" style="height: 16px;"><td style="color: #232323;"></td></tr>
+                  <tr><td style="color: #232323;"></td></tr>
+                </table>
+              </td>
             </tr>
           </table>
-          </div>
           <!-- /content -->
           
         </td>
-        <td></td>
+        <td style="color: #232323;"></td>
   </tr>
 </table>
 <!-- /body -->
 
 <!-- footer -->
-<table class="footer-wrap">
+<table class="footer-wrap" style="font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin: 0;padding: 0;border-spacing: 0;width: 100%;color: #e6e6e6;font-size: 12px;background-color: #2d303d;clear: both !important;">
   <tr>
-    <td></td>
-    <td class="container">
-      
+    <td style="color: #232323;"></td>
+    <td class="container" style="color: #232323;clear: both !important;display: block !important;margin: 0 auto !important;max-width: 750px !important;">
       <!-- content -->
-      <div class="content">
-        <table>
-          <tr>
-            <td align="center">
-              <p><a href="">planling.com</a> | <a href="#"><unsubscribe>Unsubscribe</unsubscribe></a>
-              </p>
-            </td>
-          </tr>
-        </table>
-      </div>
+      <table class="content" style="font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin: 0 auto;padding: 8px 0 8px 0;border-spacing: 0;width: 100%;max-width: 750px;">
+        <tr>
+          <td align="center" style="color: #797979;">
+            <a href="" style="color: #999999;">planling.com</a> | <a href="#" style="color: #999999;"><unsubscribe>Unsubscribe</unsubscribe></a>
+          </td>
+        </tr>
+      </table>
       <!-- /content -->
       
     </td>
-    <td></td>
+    <td style="color: #232323;"></td>
   </tr>
 </table>
 <!-- /footer -->

@@ -7,5 +7,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 #set logout url
 RewriteRule ^logout$ /scripts/logout.php
 
+#set confirm url
+RewriteRule ^verify$ /scripts/verify.php
+RewriteRule ^verify_resend$ /scripts/verify_resend.php
+
 #remove file name extensions
 RewriteRule ^([^\.]+)$ $1.php [NC,L]

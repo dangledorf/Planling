@@ -68,10 +68,44 @@
 	$('input[required]').after('<div class="required fa fa-asterisk"></div>');
 
 	//notices controls
-	$('.notice').click(function(){ //user clicked notice
-		$(this).fadeOut('fast', function(){ //fade notice out
+	$('.notice').hide(0); //hide all notices
+	$('.notice:first').fadeIn(0); //show first notice
+	$('.notice > .fa').click(function(){ //user clicked notice
+		$(this).parent('.notice').fadeOut('fast', function(){ //fade notice out
+			$(this).next('.notice').fadeIn('fast'); //fade in next notice
 			$(this).remove(); //destroy notice
 		});
 	});
+
+	//parallax scrolling
+	$(window).scroll(function(){
+    	var scroll_offset = -($(window).scrollTop() / 10); 
+		$('.parallax').css('background-position', '0 '+scroll_offset+'px'); 
+		//$('.show_box_img img').css('margin-top', scroll_offset+'px');
+    });
+    
+	/*
+	//smooth scrolling
+	if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
+	window.onmousewheel = document.onmousewheel = wheel;
+	 
+	function wheel(event){
+		var delta = 0;
+		if (event.wheelDelta) delta = event.wheelDelta / 120;
+		else if (event.detail) delta = -event.detail / 3;
+	 
+		handle(delta);
+		if (event.preventDefault) event.preventDefault();
+		event.returnValue = false;
+	}
+	function handle(delta){
+		var time = 250; // delay time
+		var distance = 300; // delta point 
+		// Dom where it will apply 
+		$('html, body').stop().animate({
+			scrollTop: $(window).scrollTop() - (distance * delta)
+		}, time );
+	}
+	*/
 
 </script>

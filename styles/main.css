@@ -355,7 +355,8 @@ label.hover:before { width: 100%; }
 }
 /* notices */
 .notice {
-	position: relative;
+	position: absolute;
+	z-index: 10;
 	overflow: hidden;
 	width: 100%;
 	margin: 4px 0 4px 0;
@@ -373,10 +374,12 @@ label.hover:before { width: 100%; }
 }
 .notice .fa {
 	position: absolute;
-	width: 100%; height: 100%;
+	width: 24px; 
+	height: 100%;
 	top: 0; right: 0;
 	padding-left: 8px;
 	font-size: 14px;
+	border-left: 1px solid rgba(0, 0, 0, 0.25);
 	cursor: pointer;
 }
 .notice .fa:before {
@@ -385,13 +388,15 @@ label.hover:before { width: 100%; }
 	padding: 7px;
 	color: rgba(0, 0, 0, 0.35);
 }
-.notice:hover .fa:before { color: black; }
+.notice .fa:hover:before { color: black; }
 .notice .fa:hover { background-color: rgba(255, 255, 255, 0.35); }
 .notice.alert { background-color: #FFFBC9; }
 .notice.error { background-color: #FF9E9E; }
 .notice.success { background-color: #BCFFB8; }
 .notice.error.fa:before { content: "\f071"; }
 .notice.success.fa:before { content: "\f00c"; }
+.notice a, .notice a:visited { color: #130FB7; }
+.notice a:hover, .notice a:active { color: #6360E4; }
 
 /* ============================================================================================================ Customizable Color Setup */
 /* green */
