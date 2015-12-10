@@ -51,6 +51,9 @@ $confirm = confirm_token_create( $email1 );
 //add to database
 sql_query(" INSERT INTO `users` (hash_token, email, password, confirm) VALUES('$hash_token', '$email1', '$password', '$confirm') ");
 
+//set notices
+notices_set('Account successfully created!', 'success');
+
 //send email
 email_send( 
 	'register', 
@@ -60,7 +63,7 @@ email_send(
 	);
 
 //log the user in
-if(do_login($email1, $password1) == true) $main_data = set_main_data(); //login success - create main_data
+if(do_login($email1, $password1)) $main_data = set_main_data(); //login success - create main_data
 else return false;
 
 //success

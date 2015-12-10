@@ -27,6 +27,6 @@ if($terror){ //exit script
 }
 
 //login
-if(do_login($user, $password) === true) do_redirect(); //login successful
+if(do_login($user, $password)) do_redirect(); //login successful
 else echo notices_get(); //show errors
 ?>

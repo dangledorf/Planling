@@ -52,7 +52,11 @@ function page_type_set($page_type) { //changes the page type to the one specifie
 	//set page type
 	$GLOBALS['PAGE_TYPE'] = $page_type;
 	//embed things
-	if($GLOBALS['PAGE_TYPE'] == PAGE_TYPE_CONTENT) require_once(ROOT_PATH.'/includes/config/header.php');
+	if($GLOBALS['PAGE_TYPE'] == PAGE_TYPE_CONTENT) {
+		require_once(ROOT_PATH.'/includes/config/header.php');
+		//show notices
+		echo notices_get();
+	}
 }
 //variable handling
 function set_post($name, $default) { //gets a post variable and cleans it
@@ -119,7 +123,7 @@ function notices_get($type = NULL) { //returns notices
 	$_SESSION['notices'] = array();
 	unset($_SESSION['notices']);
 	//combine and return notices
-	return '<article>'.implode('', $tarray).'</article>';
+	return '<article class="notices-shell">'.implode('', $tarray).'</article>';
 }
 //end script functions
 function script_end() { //this script is ran at the end of every page.
@@ -127,6 +131,8 @@ function script_end() { //this script is ran at the end of every page.
 	if($GLOBALS['PAGE_TYPE'] == PAGE_TYPE_CONTENT) require_once(ROOT_PATH.'/includes/config/footer.php');
 	//close sessions
 	session_write_close();
+	//clear ob
+	ob_flush();
 }
 
 ////////////////////////////
@@ -192,14 +198,24 @@ function do_login($username, $password) { //logs a user in
 	}
 	$data = sql_fetch($sql); //get users info
 	//set session info
+	if(isset($_SESSION['notices'])) $tnotices = $_SESSION['notices']; //store current notices
 	clear_session(); //clear old session
 	session_start(); //start new session
 	session_regenerate_id(); //create new session id
 	//save session id and last login
-	sql_query(" UPDATE `users` SET session_id='".session_id()."', last_login='now()' WHERE id='$data[id]' LIMIT 1 ");
+	sql_query(" UPDATE `users` SET session_id='".session_id()."', last_login=NOW() WHERE id='$data[id]' LIMIT 1 ");
 	//set session variables
 	$_SESSION['id'] = $data['id']; //save users id
 	$_SESSION['email'] = $data['email']; //save users email
+	$_SESSION['notices'] = $tnotices; //pass last notices
+	//set notices
+	if(isset($data['confirm'])) {
+		if( date('Y-m-d') > date('Y-m-d', strtotime($data['joined'])) ){ //over a day old since joined
+			notices_set('Your email is not verified. We have sent you an email to verify your account. <a href="verify_resend?e='.$email.'">Click here to send '.$email.' another confirmation code &raquo;</a>', 'alert');
+		}else{ //just joined - don't tell them to reverify
+			notices_set('Your email is not verified. We have sent you an email to verify your account.', 'alert');
+		}
+	}
 	//done
 	return true;
 }

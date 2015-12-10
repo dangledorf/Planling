@@ -54,11 +54,11 @@
 		$(this).removeClass('hover');
 	});
 	//input hover control
-	$('input').on('mouseover', function(){
+	$('input').on('mouseover focus', function(){
 		var tid = $(this).prop('id');
 		$('label[for="'+tid+'"]').addClass('hover');
 		$(this).addClass('hover');
-	}).on('mouseout', function(){
+	}).on('mouseout focusout', function(){
 		var tid = $(this).prop('id');
 		$('label[for="'+tid+'"]').removeClass('hover');
 		$(this).removeClass('hover');
@@ -69,11 +69,14 @@
 
 	//notices controls
 	$('.notice').hide(0); //hide all notices
+	//$('.notices-shell').insertAfter( $('#header') ); //move notices shell to proper location
 	$('.notice:first').fadeIn(0); //show first notice
 	$('.notice > .fa').click(function(){ //user clicked notice
 		$(this).parent('.notice').fadeOut('fast', function(){ //fade notice out
-			$(this).next('.notice').fadeIn('fast'); //fade in next notice
-			$(this).remove(); //destroy notice
+			if($(this).next('.notice').length > 0) { //found another notice
+				$(this).next('.notice').fadeIn('fast'); //fade in next notice
+				$(this).remove(); //destroy notice
+			}else $(this).parent('.notices-shell').remove(); //remove notices shell
 		});
 	});
 

@@ -5,9 +5,6 @@ page_type_set(PAGE_TYPE_CONTENT);
 //scripts
 require('scripts/login.php');
 
-//show notices
-echo notices_get();
-
 if(is_logged_in()){
 	echo '
 	<div id="latest-shell" class="parallax">
@@ -63,11 +60,7 @@ if(is_logged_in()){
 			</table>
 			<a href="" class="btn btn-simple col-bg-sky-blue view-all full">View All</a>
 		</article>
-	</div>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br>';
+	</div>';
 }else{
 	echo '
 	<div id="latest-shell">
