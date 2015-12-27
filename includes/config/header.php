@@ -37,7 +37,7 @@
 							</ul>
 
 							<ul id="main-drop" class="dropdown">
-								<li class="account"><a href=""><div class="fa fa-user"></div>Account</a></li>
+								<li class="account"><a href="account"><div class="fa fa-user"></div>Account</a></li>
 								<li class="logout"><a href="logout"><div class="fa fa-sign-out"></div>Logout</a></li>
 							</ul>
 
@@ -50,7 +50,7 @@
 								<li class="create"><a href=""><div class="fa fa-book"></div>Create</a></li>
 								<li class="explore"><a href=""><div class="fa fa-star"></div>Explore</a></li>
 								<li class="alerts"><a href=""><div class="fa fa-envelope"></div>Alerts</a></li>
-								<li class="account"><a href=""><div class="fa fa-user"></div>Account</a></li>
+								<li class="account"><a href="account"><div class="fa fa-user"></div>Account</a></li>
 								<li class="help"><a href=""><div class="fa fa-question"></div>Help</a></li>
 								<li class="logout"><a href="logout"><div class="fa fa-sign-out"></div>Logout</a></li>
 							</ul>';

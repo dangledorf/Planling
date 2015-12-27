@@ -4,6 +4,10 @@ require('../includes/config/config.php');
 
 //get variables
 $email = set_get('e', '');
+if(empty($email) || !email_is_valid($email)){
+	notices_set('Invalid email.', 'error');
+	do_redirect();
+}
 
 //check if it is valid
 $sql = sql_query(" SELECT id, confirm FROM `users` WHERE email='$email' LIMIT 1 ");
@@ -27,7 +31,7 @@ sql_query(" UPDATE `users` SET confirm='$confirm' WHERE id='$data[id]' LIMIT 1 "
 
 //send email
 email_send( 
-	'verify-resend', 
+	'verify_resend', 
 	'Planling Verification Code', 
 	array($email => $email), 
 	array('{{%LINK%}}' => 'http://'.MAIN_URL.'/verify?e='.$email.'&t='.$confirm) 

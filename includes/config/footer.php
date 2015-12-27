@@ -71,7 +71,7 @@
 	$('.notice').hide(0); //hide all notices
 	//$('.notices-shell').insertAfter( $('#header') ); //move notices shell to proper location
 	$('.notice:first').fadeIn(0); //show first notice
-	$('.notice > .fa').click(function(){ //user clicked notice
+	$('.notice > .fa:last').click(function(){ //user clicked notice
 		$(this).parent('.notice').fadeOut('fast', function(){ //fade notice out
 			if($(this).next('.notice').length > 0) { //found another notice
 				$(this).next('.notice').fadeIn('fast'); //fade in next notice

@@ -24,6 +24,9 @@
 	#latest .view .btn { font-size: 12px; }
 	/* tabs */
 	.tab { width: 2px; }
+	/* boxed */
+	.boxed input[type="text"], .boxed input[type="email"], .boxed input[type="password"] { width: 75%; }
+	.boxed input.short { min-width: auto; width: 50%; }
 }
 
 @media only screen and (max-width: 569px){
@@ -59,9 +62,15 @@
 		white-space: nowrap;
 		content: attr(data-label);
 	}
+	/* boxed */
+	.boxed .col.name { width: 25%; font-size: 12px; }
+	.boxed .col.data { width: 75%; }
+	.boxed input[type="text"], .boxed input[type="email"], .boxed input[type="password"] { width: 100%; }
+	.boxed input.short { width: 100%; }
+	.boxed .description{ font-size: 10px; }
 }
 
-@media only screen and (max-width: 350px){
+@media only screen and (max-width: 400px){
 	/* universal */
 	.rsp-hide-small { display: none; }
 	.rsp-fshrink-small { font-size: 10px; }

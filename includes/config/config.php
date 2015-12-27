@@ -9,8 +9,12 @@
 	define('PAGE_TYPE_CONTENT', 0); //main content pages
 	define('PAGE_TYPE_SCRIPT', 1); //script pages
 	define('PAGE_TYPE_AJAX', 2); //ajax pages
+	//defaults
+	define('DATE_FULL', 'F jS\, Y'); //site url
+	define('TIME_FULL', 'g:ia'); //site url
 	//passwords
 	define('REQ_PASSWORD_LENGTH', 6); //password lengths
+	define('PASSWORD_RESET_LIFE', 24); //password reset expiration time - in hours
 //end constants
 
 //load config variables
@@ -61,15 +65,18 @@ function page_type_set($page_type) { //changes the page type to the one specifie
 //variable handling
 function set_post($name, $default) { //gets a post variable and cleans it
 	if(!isset($_POST[$name])) return $default; //returns default
-	return sql_filter($_POST[$name]); //filters variable
+	return sql_filter(trim($_POST[$name])); //filters variable
 }
 function set_get($name, $default) { //gets a get variable and cleans it
 	if(!isset($_GET[$name])) return $default; //returns default
-	return sql_filter($_GET[$name]); //filters variable
+	return sql_filter(trim($_GET[$name])); //filters variable
 }
 function set_request($name, $default) { //gets a request variable and cleans it
 	if(!isset($_REQUEST[$name])) return $default; //returns default
-	return sql_filter($_REQUEST[$name]); //filters variable
+	return sql_filter(trim($_REQUEST[$name])); //filters variable
+}
+function var_ext(&$var, $default = false ) { //returns the variable or if null your return 
+	return isset($var) ? $var : $default;
 }
 //redirects
 function do_redirect($location = '/') { //handles redirecting the users browser
@@ -98,7 +105,7 @@ function notices_set($notice, $type) { //adds a notice to a session
 	//check if notices type exists
 	if(!isset($_SESSION['notices'][$type])) $_SESSION['notices'][$type] = array(); //create specific notice type array
 	//add notice
-	$_SESSION['notices'][$type][] = '<div class="notice '.$type.' fa fa-exclamation">'.$notice.'<div class="fa fa-times"></div></div>';
+	$_SESSION['notices'][$type][] = '<div class="notice '.$type.'"><div class="fa fa-exclamation"></div><div class="description">'.$notice.'</div><div class="fa fa-times"></div></div>';
 }
 function notices_get($type = NULL) { //returns notices
 	//initial check
@@ -227,6 +234,16 @@ function set_main_data() { //sets the users universal main_data variable
 	$tsessionid = sql_filter(session_id()); //users current session id
 	$sql = sql_query("SELECT * FROM `users` WHERE id='$tid' AND session_id='$tsessionid' AND email='$tuser' LIMIT 1");
 	if(sql_count($sql) > 0) return sql_fetch($sql); //main users data
+	//check if logged in somewhere else
+	if(isset($_COOKIE['PHPSESSID'])) { //account logged in somewhere else
+		clear_session();
+		session_start();
+		notices_set('Your account was logged in at another location. <a href="password">If you were unaware of this, please change your password &raquo;</a>', 'alert');
+	}else{ //session expired
+		clear_session();
+		session_start();
+		notices_set('You have been logged out for inactivity.', 'alert');
+	}
 	//no good
 	return false;
 }

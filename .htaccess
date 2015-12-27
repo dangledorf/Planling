@@ -11,5 +11,7 @@ RewriteRule ^logout$ /scripts/logout.php
 RewriteRule ^verify$ /scripts/verify.php
 RewriteRule ^verify_resend$ /scripts/verify_resend.php
 
+#set password reset url
+
 #remove file name extensions
 RewriteRule ^([^\.]+)$ $1.php [NC,L]

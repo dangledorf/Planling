@@ -87,7 +87,9 @@ if(is_logged_in()){
 					<td colspan="2">
 						<input type="submit" class="full col-bg-blue" value="Login">
 						<br>
-						Don\'t have an account? <a href="register">Register free here <div class="fa fa-arrow-circle-right"></div></a>
+						<a href="password">Forgot your password?</a>
+						<hr>
+						<center>Don\'t have an account? <a href="register">Register free here <div class="fa fa-arrow-circle-right"></div></a></center>
 					</td>
 				</tr>
 			</table>

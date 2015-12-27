@@ -5,7 +5,7 @@ require('../includes/config/config.php');
 //get variables
 $email = set_get('e', '');
 $confirm = set_get('t', '');
-if(empty($email)){
+if(empty($email) || !email_is_valid($email)){
 	notices_set('Invalid email.', 'error');
 	do_redirect();
 }
