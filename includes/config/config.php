@@ -10,8 +10,8 @@
 	define('PAGE_TYPE_SCRIPT', 1); //script pages
 	define('PAGE_TYPE_AJAX', 2); //ajax pages
 	//defaults
-	define('DATE_FULL', 'F jS\, Y'); //site url
-	define('TIME_FULL', 'g:ia'); //site url
+	define('DATE_FULL', 'F jS\, Y'); //full text date
+	define('TIME_FULL', 'g:ia'); //time format
 	//passwords
 	define('REQ_PASSWORD_LENGTH', 6); //password lengths
 	define('PASSWORD_RESET_LIFE', 24); //password reset expiration time - in hours
